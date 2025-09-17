@@ -6,10 +6,9 @@ def main():
     benefits = float(input("Enter benefits: "))
     #create Payroll object using user input
     employee= Payroll(basic, benefits)
-    #display gross salary
     paye = employee.calculate_paye()
     nhif = employee.calculate_nhif()
-
+    #display gross salary
     print(f"Gross Salary: {employee.gross_salary}")
     print(f"PAYE: {paye}")
     print(f"NHIF: {nhif}")
