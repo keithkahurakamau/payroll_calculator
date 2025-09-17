@@ -1,4 +1,4 @@
-from payroll import Payroll # import the Payroll class from the payroll module
+from payroll_calculator.payroll import Payroll # import the Payroll class from the payroll module
 
 def main():
     #take user input for basic salary and benefits
@@ -8,10 +8,14 @@ def main():
     employee= Payroll(basic, benefits)
     paye = employee.calculate_paye()
     nhif = employee.calculate_nhif()
-    #display gross salary
+    nssf = employee.calculate_nssf()
+    net_salary = employee.calculate_net_salary()
+    #display gross salary and deductions
     print(f"Gross Salary: {employee.gross_salary}")
     print(f"PAYE: {paye}")
     print(f"NHIF: {nhif}")
+    print(f"NSSF: {nssf}")
+    print(f"Net Salary: {net_salary}")
 
 # ensure main runs only when this file is executed directly
 if __name__ == "__main__":
